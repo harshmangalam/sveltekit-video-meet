@@ -5,7 +5,6 @@
   import User from "$lib/components/User.svelte";
   import { goto } from "$app/navigation";
   import PhoneIcon from "$lib/icons/PhoneIcon.svelte";
-  import VideoIcon from "$lib/icons/VideoIcon.svelte";
   import PhoneIcommingIcon from "$lib/icons/PhoneIcommingIcon.svelte";
   import MicIcon from "$lib/icons/MicIcon.svelte";
   import MicOffIcon from "$lib/icons/MicOffIcon.svelte";

@@ -16,16 +16,16 @@ const socketioServer: PluginOption = {
           socket.emit("users", [...users]);
         });
 
-        socket.on("offer", (data) => {
-          io.to(data.to).emit("offer", data);
+        socket.on("offer", (payload) => {
+          io.to(payload.target).emit("offer", payload);
         });
 
-        socket.on("answer", (data) => {
-          io.to(data.to).emit("answer", data);
+        socket.on("answer", (payload) => {
+          io.to(payload.target).emit("answer", payload);
         });
 
-        socket.on("ice", (incoming) => {
-          io.to(incoming.to).emit("ice", incoming.candidate);
+        socket.on("ice-candidate", (incoming) => {
+          io.to(incoming.target).emit("ice-candidate", incoming.candidate);
         });
 
         socket.on("end-call", (data) => {
