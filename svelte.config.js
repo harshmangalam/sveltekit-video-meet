@@ -8,7 +8,9 @@ const config = {
   }),
 
   kit: {
-    adapter: adapter(),
+    adapter: adapter({
+      out: "build",
+    }),
   },
 };
 
