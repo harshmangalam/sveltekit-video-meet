@@ -8,7 +8,7 @@
     <VideoIcon size={32} />
     <h1 class="font-medium text-2xl">Svelte Meet</h1>
   </div>
-  <div>
+  <a title="Github repo" href="https://github.com/harshmangalam/sveltekit-video-meet" target="_blank">
     <GithubIcon />
-  </div>
+  </a>
 </nav>

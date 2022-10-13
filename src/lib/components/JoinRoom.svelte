@@ -10,8 +10,8 @@
   }
 </script>
 
-<div class="flex items-center space-x-2">
-  <div class="group relative">
+<div class="flex items-center space-x-2 sm:w-auto w-full">
+  <div class="group relative w-full">
     <div
       class="absolute left-3 top-1/2  -translate-y-1/2 text-slate-400 pointer-events-none group-focus-within:text-blue-500"
     >
@@ -27,7 +27,7 @@
     />
   </div>
 
-  <button on:click={handleJoin} class="p-2 dark:bg-gray-800 rounded-md">
+  <button title="Join room" on:click={handleJoin} class="p-2 dark:bg-gray-800 rounded-md">
     <ArrowRight />
   </button>
 </div>

@@ -228,6 +228,10 @@
   }
 </script>
 
+
+<svelte:head><title>
+  Room | {data.roomId}
+</title></svelte:head>
 <div class="my-4 text-center">
   <h5 class="font-bold text-sm md:text-xl">Room: {data.roomId}</h5>
   <!-- incomming call  -->
@@ -242,6 +246,7 @@
       <button
         class="w-9 h-9 grid place-items-center rounded-full bg-green-900 flex-none"
         on:click={handleRecieveCall}
+        title="Receive"
       >
         <PhoneIcommingIcon />
       </button>
@@ -271,6 +276,7 @@
     <button
       class="w-10 h-10 rounded-full grid place-items-center bg-red-900"
       on:click={handleHangUp}
+      title="Hangup"
     >
       <PhoneIcon />
     </button>
@@ -279,6 +285,7 @@
       class={`w-10 h-10 rounded-full grid place-items-center ${
         isUserCameraOn ? "bg-gray-700" : "bg-red-900"
       }`}
+      title="Toggle camera"
       on:click={toggleCamera}
     >
       {#if isUserCameraOn}
@@ -291,6 +298,7 @@
       class={`w-10 h-10 rounded-full grid place-items-center ${
         isUserMicOn ? "bg-gray-700" : "bg-red-900"
       }`}
+      title="Toggle mic"
       on:click={toggleMic}
     >
       {#if isUserMicOn}

@@ -23,6 +23,7 @@
     <button
       on:click={callUser}
       class="bg-blue-900 rounded-full  w-9 h-9 grid place-items-center"
+      title="Call"
     >
       <PhoneIcon />
     </button>
