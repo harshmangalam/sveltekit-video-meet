@@ -4,7 +4,7 @@ import { handler } from "./build/handler.js";
 import express from "express";
 import { Server } from "socket.io";
 
-
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 const server = http.createServer(app);
@@ -49,6 +49,6 @@ io.on("connection", (socket) => {
 // SvelteKit handlers
 app.use(handler);
 
-server.listen(3000, () => {
-  console.log("Running on http://localhost:3000");
+server.listen(PORT, () => {
+  console.log(`Running on port ${PORT}`);
 });
