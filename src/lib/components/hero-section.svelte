@@ -3,21 +3,20 @@
   import JoinRoom from "./join-room.svelte";
 </script>
 
-<div class="hero bg-base-100">
+<div class="hero bg-base-100 py-10">
   <div class="hero-content flex-col lg:flex-row-reverse">
-    <div class="max-w-lg w-full">
+    <div class="max-w-lg w-full sm:mb-8">
       <img src="hero.svg" alt="mockup" />
     </div>
     <div>
-      <div class="text-5xl">
+      <div class="text-3xl lg:text-5xl text-center lg:text-start">
         <h1>Open source video meetings.</h1>
-        <h1>Now free for everyone.</h1>
       </div>
-      <p class="py-6 text-lg">
+      <p class="py-6 text-lg text-center lg:text-start">
         An open source and free to use one-to-one private video calling web app
         build with sveltekit.
       </p>
-      <div class="flex items-center gap-4 flex-col sm:flex-row">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6 lg:mt-0">
         <CreateRoom />
         <JoinRoom />
       </div>

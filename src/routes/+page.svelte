@@ -8,7 +8,5 @@
 </svelte:head>
 <div class="min-h-screen bg-base-100">
   <Navbar />
-  <main>
-    <HeroSection />
-  </main>
+  <HeroSection />
 </div>

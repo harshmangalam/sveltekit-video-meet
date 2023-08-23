@@ -3,13 +3,13 @@
   let roomId: string;
 </script>
 
-<div class:join={roomId}>
+<div class:join={roomId} class="w-full col-span-2">
   <input
     type="text"
-    aria-label="Enter a code"
-    placeholder="Enter a code"
+    aria-label="Enter code and join meet"
+    placeholder="Enter code and join meet"
     name="roomId"
-    class="input input-bordered join-item focus:outline-0"
+    class="input input-bordered join-item focus:outline-0 w-full lg:max-w-xs"
     bind:value={roomId}
   />
   {#if roomId}
