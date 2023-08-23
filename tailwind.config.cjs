@@ -15,7 +15,6 @@ module.exports = {
       "forest",
       "lofi",
       "fantasy",
-      "black",
       "luxury",
       "dracula",
       "business",

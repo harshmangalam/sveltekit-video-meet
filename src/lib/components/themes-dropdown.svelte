@@ -10,7 +10,6 @@
     "forest",
     "lofi",
     "fantasy",
-    "black",
     "luxury",
     "dracula",
     "business",
