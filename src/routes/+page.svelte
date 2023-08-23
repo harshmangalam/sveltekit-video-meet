@@ -4,11 +4,10 @@
   import Navbar from "$lib/components/Navbar.svelte";
 </script>
 
-
 <svelte:head>
-  <title>Home | Video Call</title>
+  <title>Svelte Meet</title>
 </svelte:head>
-<div class="min-h-screen  dark:bg-gray-900 p-4 dark:text-gray-200">
+<div class="min-h-screen dark:bg-gray-900 p-4 dark:text-gray-200">
   <Navbar />
   <main class="py-8">
     <section class="bg-white dark:bg-gray-900">
@@ -24,7 +23,8 @@
           <p
             class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400"
           >
-           An open source video calling web app build with sveltekit, socketio and tailwindcss
+            An open source video calling web app build with sveltekit, socketio
+            and tailwindcss
           </p>
 
           <div class="flex items-center gap-4 flex-col sm:flex-row">
