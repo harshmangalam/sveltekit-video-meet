@@ -1,5 +1,4 @@
 <script>
-  import GithubIcon from "$lib/icons/GithubIcon.svelte";
   import ThemesDropdown from "./themes-dropdown.svelte";
 </script>
 

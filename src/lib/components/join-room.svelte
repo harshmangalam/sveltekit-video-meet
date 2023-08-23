@@ -1,5 +1,4 @@
 <script lang="ts">
-  import ArrowRight from "$lib/icons/ArrowRight.svelte";
   let roomId: string;
 </script>
 
@@ -14,7 +13,7 @@
   />
   {#if roomId}
     <a class="btn btn-info btn-square join-item" href={roomId}>
-      <ArrowRight />
+      <iconify-icon width={24} height={24} icon="formkit:arrowright" />
     </a>
   {/if}
 </div>

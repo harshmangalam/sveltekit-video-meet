@@ -3,11 +3,6 @@
   import { io, Socket } from "socket.io-client";
   import Video from "$lib/components/video.svelte";
   import { goto } from "$app/navigation";
-  import PhoneIcon from "$lib/icons/PhoneIcon.svelte";
-  import MicIcon from "$lib/icons/MicIcon.svelte";
-  import MicOffIcon from "$lib/icons/MicOffIcon.svelte";
-  import VideoOffIcon from "$lib/icons/VideoOffIcon.svelte";
-  import VideoOnIcon from "$lib/icons/VideoOnIcon.svelte";
   import IncommingCall from "$lib/components/incomming-call.svelte";
   import RemoteUsersModal from "$lib/components/remote-users-modal.svelte";
 
