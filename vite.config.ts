@@ -1,5 +1,5 @@
 import { sveltekit } from "@sveltejs/kit/vite";
-import { Server, Socket } from "socket.io";
+import { Server } from "socket.io";
 import type { PluginOption, UserConfig } from "vite";
 
 const socketioServer: PluginOption = {
@@ -31,7 +31,6 @@ const socketioServer: PluginOption = {
         socket.on("end-call", (data) => {
           io.to(data.to).emit("end-call", data);
         });
-      
 
         socket.on("disconnecting", (reason) => {
           for (const room of socket.rooms) {

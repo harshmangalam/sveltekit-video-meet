@@ -6,7 +6,7 @@
   import IncommingCall from "$lib/components/incomming-call.svelte";
   import RemoteUsersModal from "$lib/components/remote-users-modal.svelte";
 
-  export let data;
+  export let data: { roomId: string };
   let users: string[] = [];
   let peer: RTCPeerConnection;
   let socket: Socket;
