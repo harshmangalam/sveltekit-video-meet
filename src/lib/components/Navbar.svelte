@@ -9,7 +9,7 @@
     <VideoIcon size={32} />
     <h1 class="text-xl font-bold">Svelte Meet</h1>
   </div>
-  <div class="flex gap-2 items-center flex-none">
+  <div class="flex items-center flex-none">
     <ThemesDropdown />
     <a
       title="Github repo"
