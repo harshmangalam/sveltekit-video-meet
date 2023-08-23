@@ -34,7 +34,7 @@
         </div>
       {/if}
       {#each users as user}
-        <li class="py-2 px-4 hover:bg-base-200">
+        <li class="py-2 px-4 hover:bg-base-200 rounded-md">
           <div class="card w-full">
             <div class="card-body p-0">
               <div class="flex items-center gap-2 justify-between">
@@ -49,10 +49,10 @@
                 <div>
                   <button
                     on:click={() => callUser(user)}
-                    class="btn btn-circle btn-primary"
+                    class="btn btn-circle btn-primary btn-sm"
                     title="Call"
                   >
-                    <iconify-icon width={24} height={24} icon="subway:call-2" />
+                    <iconify-icon width={18} height={18} icon="subway:call-2" />
                   </button>
                 </div>
               </div>

@@ -8,7 +8,7 @@
   };
 </script>
 
-<div class="toast toast-end">
+<div class="toast toast-end z-10">
   <div class="alert shadow-lg">
     <iconify-icon width={32} height={32} icon="simple-line-icons:call-in" />
     <div>

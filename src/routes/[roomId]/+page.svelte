@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount, onDestroy } from "svelte";
   import { io, Socket } from "socket.io-client";
-  import Video from "$lib/components/Video.svelte";
+  import Video from "$lib/components/video.svelte";
   import { goto } from "$app/navigation";
   import PhoneIcon from "$lib/icons/PhoneIcon.svelte";
   import MicIcon from "$lib/icons/MicIcon.svelte";
@@ -262,37 +262,35 @@
     class="flex items-center justify-center space-x-2 absolute bottom-0 left-0 right-0 p-4"
   >
     <button
-      class="w-10 h-10 rounded-full grid place-items-center bg-red-900"
+      class="btn btn-error btn-circle"
       on:click={handleHangUp}
       title="Hangup"
     >
-      <PhoneIcon />
+      <iconify-icon width={24} height={24} icon="fluent:call-28-regular" />
     </button>
 
     <button
-      class={`w-10 h-10 rounded-full grid place-items-center ${
-        isUserCameraOn ? "bg-gray-700" : "bg-red-900"
-      }`}
+      class={"btn btn-circle"}
       title="Toggle camera"
+      class:btn-error={!isUserCameraOn}
       on:click={toggleCamera}
     >
       {#if isUserCameraOn}
-        <VideoOnIcon />
+        <iconify-icon width={24} height={24} icon="carbon:video" />
       {:else}
-        <VideoOffIcon />
+        <iconify-icon width={24} height={24} icon="carbon:video-off" />
       {/if}
     </button>
     <button
-      class={`w-10 h-10 rounded-full grid place-items-center ${
-        isUserMicOn ? "bg-gray-700" : "bg-red-900"
-      }`}
+      class="btn btn-circle"
+      class:btn-error={!isUserMicOn}
       title="Toggle mic"
       on:click={toggleMic}
     >
       {#if isUserMicOn}
-        <MicIcon />
+        <iconify-icon width={24} height={24} icon="fluent:mic-32-regular" />
       {:else}
-        <MicOffIcon />
+        <iconify-icon width={24} height={24} icon="fluent:mic-off-32-regular" />
       {/if}
     </button>
   </div>
