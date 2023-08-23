@@ -1,9 +1,9 @@
 <script>
   import CreateRoom from "./create-room.svelte";
-  import JoinRoom from "./JoinRoom.svelte";
+  import JoinRoom from "./join-room.svelte";
 </script>
 
-<div class="hero bg-base-200">
+<div class="hero bg-base-100">
   <div class="hero-content flex-col lg:flex-row-reverse">
     <div class="max-w-lg w-full">
       <img src="hero.svg" alt="mockup" />
