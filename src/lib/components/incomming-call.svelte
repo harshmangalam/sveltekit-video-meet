@@ -16,7 +16,9 @@
     <iconify-icon width={32} height={32} icon="simple-line-icons:call-in" />
     <div>
       <h3 class="font-bold">Incommin Call</h3>
-      <div class="text-xs">{caller} is calling you...</div>
+      <div class="text-sm max-w-xs w-full truncate">
+        {caller} is calling you...
+      </div>
     </div>
     <div class="flex items-center gap-2">
       <button

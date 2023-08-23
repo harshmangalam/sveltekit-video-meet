@@ -5,8 +5,10 @@
   import { goto } from "$app/navigation";
   import IncommingCall from "$lib/components/incomming-call.svelte";
   import RemoteUsersModal from "$lib/components/remote-users-modal.svelte";
+  import RoomInfo from "$lib/components/room-info.svelte";
 
   export let data: { roomId: string };
+
   let users: string[] = [];
   let peer: RTCPeerConnection;
   let socket: Socket;
@@ -64,7 +66,6 @@
     socket.on("ice-candidate", handleNewICECandidateMsg);
     socket.on("end-call", handleRemoteCallEnd);
   });
-
   const handleCall = (userID: string) => {
     callUser(userID);
     remoteUser = userID;
@@ -89,12 +90,10 @@
 
     return peer;
   }
-
   function callUser(userID: string) {
     peer = createPeer(userID);
     userStream.getTracks().forEach((track) => peer.addTrack(track, userStream));
   }
-
   function handleNegotiationNeededEvent(userID: string) {
     peer
       .createOffer()
@@ -112,7 +111,6 @@
       })
       .catch((e) => console.log(e));
   }
-
   function handleRejectCall() {
     isIncommingCall = false;
     incommingPayload = null;
@@ -149,7 +147,6 @@
         isCallAccepted = true;
       });
   }
-
   function handleAnswer(message: any) {
     console.log("incomming answer", message);
     remoteUser = message.caller;
@@ -157,7 +154,6 @@
     peer.setRemoteDescription(desc).catch((e) => console.log(e));
     isCallAccepted = true;
   }
-
   function handleICECandidateEvent(e: RTCPeerConnectionIceEvent) {
     if (e.candidate) {
       console.log("ice", e.candidate);
@@ -174,12 +170,10 @@
 
     peer.addIceCandidate(candidate).catch((e) => console.log(e));
   }
-
   function handleTrackEvent(e: RTCTrackEvent) {
     console.log("remote track", e.streams);
     remoteStream = e.streams[0];
   }
-
   function handleHangUp() {
     socket.emit("end-call", {
       from: socket.id,
@@ -190,7 +184,6 @@
     remoteUser = "";
     goto("/");
   }
-
   function handleRemoteCallEnd(data: any) {
     stopMediaTracks();
     console.log(userStream.active);
@@ -214,13 +207,11 @@
       }
     }
   }
-
   function toggleCamera() {
     const tracks = userStream.getVideoTracks();
     tracks[0].enabled = !tracks[0].enabled;
     isUserCameraOn = tracks[0].enabled;
   }
-
   function toggleMic() {
     const tracks = userStream.getAudioTracks();
     tracks[0].enabled = !tracks[0].enabled;
@@ -234,8 +225,8 @@
   </title></svelte:head
 >
 
-<div class="pb-4 flex items-center justify-between gap-2">
-  <div class="badge badge-ghost badge-lg h-auto">Room: {data.roomId}</div>
+<RoomInfo />
+<div class="pb-4 flex justify-end gap-2">
   <RemoteUsersModal
     on:calluser={(ev) => callUser(ev.detail.user)}
     users={connectedUsers}
