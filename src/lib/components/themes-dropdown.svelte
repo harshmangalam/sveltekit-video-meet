@@ -1,42 +1,31 @@
 <script lang="ts">
   const themes = [
-    "light",
-    "dark",
     "cupcake",
     "bumblebee",
     "emerald",
     "corporate",
     "synthwave",
-    "retro",
-    "cyberpunk",
-    "valentine",
     "halloween",
     "garden",
     "forest",
-    "aqua",
     "lofi",
-    "pastel",
     "fantasy",
-    "wireframe",
     "black",
     "luxury",
     "dracula",
-    "cmyk",
-    "autumn",
     "business",
     "acid",
     "lemonade",
-    "night",
-    "coffee",
-    "winter",
   ];
 
+  let currentTheme = "corporate";
   function handleChangeTheme(theme: string) {
+    currentTheme = theme;
     document.documentElement.setAttribute("data-theme", theme);
   }
 </script>
 
-<details class="dropdown dropdown-left">
+<details class="dropdown dropdown-end">
   <summary class="m-1 btn btn-square btn-ghost">
     <iconify-icon width={24} height={24} icon="fluent:dark-theme-24-regular" />
   </summary>
@@ -45,7 +34,10 @@
   >
     {#each themes as theme}
       <li>
-        <button on:click={() => handleChangeTheme(theme)}>
+        <button
+          class:active={currentTheme === theme}
+          on:click={() => handleChangeTheme(theme)}
+        >
           {theme}
         </button>
       </li>
