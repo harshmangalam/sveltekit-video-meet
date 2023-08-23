@@ -3,12 +3,17 @@
   import VideoIcon from "$lib/icons/VideoIcon.svelte";
 </script>
 
-<nav class="w-full px-4 h-16 flex items-center justify-between">
-  <div class="flex  items-center space-x-3">
+<nav class="navbar bg-base-100">
+  <div class="flex-1 flex items-center gap-2">
     <VideoIcon size={32} />
-    <h1 class="font-medium text-2xl">Svelte Meet</h1>
+    <h1 class="text-xl font-bold">Svelte Meet</h1>
   </div>
-  <a title="Github repo" href="https://github.com/harshmangalam/sveltekit-video-meet" target="_blank">
-    <GithubIcon />
-  </a>
+  <div class="flex-none">
+    <a
+      title="Github repo"
+      href="https://github.com/harshmangalam/sveltekit-video-meet"
+      target="_blank"
+      class="btn btn-square btn-ghost"><GithubIcon /></a
+    >
+  </div>
 </nav>
