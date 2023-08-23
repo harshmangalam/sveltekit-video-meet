@@ -5,11 +5,11 @@
   import User from "$lib/components/User.svelte";
   import { goto } from "$app/navigation";
   import PhoneIcon from "$lib/icons/PhoneIcon.svelte";
-  import PhoneIcommingIcon from "$lib/icons/PhoneIcommingIcon.svelte";
   import MicIcon from "$lib/icons/MicIcon.svelte";
   import MicOffIcon from "$lib/icons/MicOffIcon.svelte";
   import VideoOffIcon from "$lib/icons/VideoOffIcon.svelte";
   import VideoOnIcon from "$lib/icons/VideoOnIcon.svelte";
+  import IncommingCall from "$lib/components/incomming-call.svelte";
 
   export let data;
   let users: string[] = [];
@@ -152,7 +152,7 @@
 
   function handleAnswer(message: any) {
     console.log("incomming answer", message);
-    remoteUser = message.caller
+    remoteUser = message.caller;
     const desc = new RTCSessionDescription(message.sdp);
     peer.setRemoteDescription(desc).catch((e) => console.log(e));
     isCallAccepted = true;
@@ -228,29 +228,21 @@
   }
 </script>
 
-
-<svelte:head><title>
-  Room | {data.roomId}
-</title></svelte:head>
+<svelte:head
+  ><title>
+    Room | {data.roomId}
+  </title></svelte:head
+>
 <div class="my-4 text-center">
-  <h5 class="font-bold text-sm md:text-xl">Room: {data.roomId}</h5>
+  <div class="badge badge-ghost">Room {data.roomId}</div>
+
   <!-- incomming call  -->
 
   {#if isIncommingCall}
-    <div class="flex items-center justify-center space-x-2 my-2">
-      <span>
-        Icomming call from <span class="font-semibold"
-          >{incommingPayload.caller}</span
-        ></span
-      >
-      <button
-        class="w-9 h-9 grid place-items-center rounded-full bg-green-900 flex-none"
-        on:click={handleRecieveCall}
-        title="Receive"
-      >
-        <PhoneIcommingIcon />
-      </button>
-    </div>
+    <IncommingCall
+      caller={incommingPayload.caller}
+      on:receivecall={handleRecieveCall}
+    />
   {/if}
 </div>
 
@@ -261,7 +253,7 @@
 
 <!-- users in room  -->
 
-<ul class="flex items-center gap-2  my-2 overflow-x-auto">
+<ul class="flex items-center gap-2 my-2 overflow-x-auto">
   {#each connectedUsers as user (user)}
     <li>
       <User on:callUser={(ev) => callUser(ev.detail.user)} {user} />
