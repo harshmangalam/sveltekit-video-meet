@@ -13,8 +13,11 @@
   }
 </script>
 
-<button class="btn btn-circle" on:click={() => dialogRef?.showModal()}>
+<button class="btn btn-circle relative" on:click={() => dialogRef?.showModal()}>
   <iconify-icon width={24} height={24} icon="ph:users-bold" />
+  <div class="badge badge-error rounded-full absolute -top-2 -right-2">
+    {users.length}
+  </div>
 </button>
 <dialog bind:this={dialogRef} class="modal">
   <form method="dialog" class="modal-box relative">
