@@ -1,5 +1,5 @@
 <script>
-  import CreateRoom from "./CreateRoom.svelte";
+  import CreateRoom from "./create-room.svelte";
   import JoinRoom from "./JoinRoom.svelte";
 </script>
 
