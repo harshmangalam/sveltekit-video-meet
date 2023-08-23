@@ -1,6 +1,7 @@
 <script>
   import GithubIcon from "$lib/icons/GithubIcon.svelte";
   import VideoIcon from "$lib/icons/VideoIcon.svelte";
+  import ThemesDropdown from "./themes-dropdown.svelte";
 </script>
 
 <nav class="navbar bg-base-100">
@@ -8,7 +9,8 @@
     <VideoIcon size={32} />
     <h1 class="text-xl font-bold">Svelte Meet</h1>
   </div>
-  <div class="flex-none">
+  <div class="flex gap-2 items-center flex-none">
+    <ThemesDropdown />
     <a
       title="Github repo"
       href="https://github.com/harshmangalam/sveltekit-video-meet"
