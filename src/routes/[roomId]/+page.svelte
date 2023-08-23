@@ -2,7 +2,6 @@
   import { onMount, onDestroy } from "svelte";
   import { io, Socket } from "socket.io-client";
   import Video from "$lib/components/Video.svelte";
-  import User from "$lib/components/User.svelte";
   import { goto } from "$app/navigation";
   import PhoneIcon from "$lib/icons/PhoneIcon.svelte";
   import MicIcon from "$lib/icons/MicIcon.svelte";
@@ -10,6 +9,7 @@
   import VideoOffIcon from "$lib/icons/VideoOffIcon.svelte";
   import VideoOnIcon from "$lib/icons/VideoOnIcon.svelte";
   import IncommingCall from "$lib/components/incomming-call.svelte";
+  import RemoteUsersModal from "$lib/components/remote-users-modal.svelte";
 
   export let data;
   let users: string[] = [];
@@ -233,33 +233,29 @@
     Room | {data.roomId}
   </title></svelte:head
 >
-<div class="my-4 text-center">
-  <div class="badge badge-ghost">Room {data.roomId}</div>
 
-  <!-- incomming call  -->
-
-  {#if isIncommingCall}
-    <IncommingCall
-      caller={incommingPayload.caller}
-      on:receivecall={handleRecieveCall}
-    />
-  {/if}
+<div class="pb-4 flex items-center justify-between gap-2">
+  <div class="badge badge-ghost badge-lg h-auto">Room: {data.roomId}</div>
+  <RemoteUsersModal
+    on:calluser={(ev) => callUser(ev.detail.user)}
+    users={connectedUsers}
+    room={data.roomId}
+  />
 </div>
+
+<!-- incomming call  -->
+
+{#if isIncommingCall}
+  <IncommingCall
+    caller={incommingPayload.caller}
+    on:receivecall={handleRecieveCall}
+  />
+{/if}
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
   <Video isCurrentUser={true} user={currentUser} stream={userStream} />
   <Video user={remoteUser} stream={remoteStream} />
 </div>
-
-<!-- users in room  -->
-
-<ul class="flex items-center gap-2 my-2 overflow-x-auto">
-  {#each connectedUsers as user (user)}
-    <li>
-      <User on:callUser={(ev) => callUser(ev.detail.user)} {user} />
-    </li>
-  {/each}
-</ul>
 
 {#if isCallAccepted}
   <div
