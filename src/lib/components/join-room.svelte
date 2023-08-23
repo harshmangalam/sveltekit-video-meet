@@ -3,7 +3,7 @@
   let roomId: string;
 </script>
 
-<div class:join={roomId} class="w-full col-span-2">
+<div class:join={roomId} class="w-full sm:col-span-3">
   <input
     type="text"
     aria-label="Enter code and join meet"

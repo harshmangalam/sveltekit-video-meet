@@ -16,7 +16,7 @@
         An open source and free to use one-to-one private video calling web app
         build with sveltekit.
       </p>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6 lg:mt-0">
+      <div class="grid grid-cols-1 sm:grid-cols-5 gap-4 mt-6 lg:mt-0">
         <CreateRoom />
         <JoinRoom />
       </div>
