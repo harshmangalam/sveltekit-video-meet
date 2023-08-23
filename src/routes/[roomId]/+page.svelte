@@ -113,6 +113,11 @@
       .catch((e) => console.log(e));
   }
 
+  function handleRejectCall() {
+    isIncommingCall = false;
+    incommingPayload = null;
+    remoteUser = "";
+  }
   function handleRecieveCall() {
     console.log("incomming offer", incommingPayload);
     peer = createPeer(remoteUser);
@@ -244,6 +249,7 @@
   <IncommingCall
     caller={incommingPayload.caller}
     on:receivecall={handleRecieveCall}
+    on:rejectcall={handleRejectCall}
   />
 {/if}
 
