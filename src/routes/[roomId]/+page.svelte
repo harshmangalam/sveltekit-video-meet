@@ -1,11 +1,11 @@
 <script lang="ts">
   import { onMount, onDestroy } from "svelte";
   import { io, Socket } from "socket.io-client";
-  import Video from "../../lib/components/video.svelte";
+  import Video from "$lib/components/video.svelte";
   import { goto } from "$app/navigation";
-  import IncommingCall from "../../lib/components/incomming-call.svelte";
-  import RemoteUsersModal from "../../lib/components/remote-users-modal.svelte";
-  import RoomInfo from "../../lib/components/room-info.svelte";
+  import IncommingCall from "$lib/components/incomming-call.svelte";
+  import RemoteUsersModal from "$lib/components/remote-users-modal.svelte";
+  import RoomInfo from "$lib/components/room-info.svelte";
 
   export let data: { roomId: string };
 
