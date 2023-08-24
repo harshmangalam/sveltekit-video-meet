@@ -1,4 +1,4 @@
-import adapter from "@sveltejs/adapter-node";
+import adapter from "svelte-adapter-deno";
 import preprocess from "svelte-preprocess";
 
 /** @type {import('@sveltejs/kit').Config} */

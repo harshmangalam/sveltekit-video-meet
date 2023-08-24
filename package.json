@@ -18,6 +18,7 @@
     "daisyui": "^3.6.1",
     "postcss": "^8.4.28",
     "svelte": "^4.2.0",
+    "svelte-adapter-deno": "^0.9.0",
     "svelte-check": "^3.5.0",
     "svelte-preprocess": "^5.0.4",
     "tailwindcss": "^3.3.3",
@@ -32,6 +33,6 @@
     "socket.io-client": "^4.5.2"
   },
   "engines": {
-    "node": ">=20.3.1"
+    "node": ">=18.16.0"
   }
 }
