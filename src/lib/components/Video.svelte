@@ -1,5 +1,5 @@
 <script lang="ts">
-  import video from "$lib/directive/video";
+  import video from "../directive/video";
 
   export let stream: MediaStream;
   export let user: string;

@@ -1,6 +1,6 @@
 <script>
-  import Navbar from "$lib/components/navbar.svelte";
-  import HeroSection from "$lib/components/hero-section.svelte";
+  import Navbar from "../lib/components/navbar.svelte";
+  import HeroSection from "../lib/components/hero-section.svelte";
 </script>
 
 <svelte:head>
